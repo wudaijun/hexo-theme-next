@@ -45,9 +45,9 @@ cache:
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
+  small: /assets/theme/favicon-16x16.ico
+  medium: /assets/theme/favicon-32x32.ico
+  apple_touch_icon: /assets/theme/favicon-100x100.png
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
@@ -55,7 +55,7 @@ favicon:
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: false
 
 footer:
   # Specify the date when the site was setup.
@@ -118,9 +118,9 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -136,10 +136,10 @@ menu_settings:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -179,7 +179,7 @@ social_icons:
 # Usage: `permalink || title`
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the title and aria-label name.
-#github_banner: https://github.com/yourname || Follow me on GitHub
+# github_banner: https://github.com/wudaijun || Follow me on GitHub
 
 # Blog rolls
 links_icon: link
@@ -194,20 +194,20 @@ avatar:
   # in theme directory(source/images): /images/avatar.gif
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: #/images/avatar.gif
+  url: /assets/theme/avatar.png
   # If true, the avatar would be dispalyed in circle. 
-  rounded: false
+  rounded: true
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
-  opacity: 1
+  opacity: 0.8
   # If true, the avatar would be rotated with the cursor.
-  rotated: false
+  rotated: true
 
 # Table Of Contents in the Sidebar
 toc:
   enable: true
 
   # Automatically add list number to toc.
-  number: true
+  number: false
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: false
@@ -251,7 +251,7 @@ sidebar:
 # ---------------------------------------------------------------
 
 # Automatically scroll page to section which is under <!-- more --> mark.
-scroll_to_more: true
+scroll_to_more: false
 
 # Automatically saving scroll position on each post/page in cookies.
 save_scroll: false
@@ -262,7 +262,7 @@ excerpt_description: true
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: false
+  enable: true
   length: 150
 
 # Post meta display settings
@@ -270,7 +270,7 @@ post_meta:
   item_text: true
   created_at: true
   updated_at:
-    enabled: true
+    enabled: false
     # If true, show updated date label only if `updated date` different from 'created date' (post edited in another day than was created).
     # And if post will edited in same day as created, edited time will show in popup title under created time label.
     # If false show anyway, but if post edited in same day, show only edited time.
@@ -279,12 +279,12 @@ post_meta:
 
 # Post wordcount display settings
 # Dependencies: https://github.com/theme-next/hexo-symbols-count-time
-symbols_count_time:
-  separated_meta: true
-  item_text_post: true
-  item_text_total: false
-  awl: 4
-  wpm: 275
+# symbols_count_time:
+#  separated_meta: true
+#  item_text_post: true
+#  item_text_total: false
+#  awl: 4
+#  wpm: 275
 
 codeblock:
   # Manual define the border radius in codeblock
@@ -433,7 +433,7 @@ font:
 
 # Math Equations Render Support
 math:
-  enable: false
+  enable: true
 
   # Default(true) will load mathjax/katex script on demand
   # That is it only render those page who has 'mathjax: true' in Front Matter.
@@ -482,7 +482,7 @@ pangu: false
 # Disqus
 disqus:
   enable: false
-  shortname:
+  shortname: wudaijun
   count: true
   lazyload: false
 
@@ -500,9 +500,9 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true
+  appid:  kL7con6xeU88chDAVyUSDSHI-gzGzoHsz # your leancloud application appid
+  appkey: 9XLxirxDW8NUhHJdu460Uiba # your leancloud application appkey
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # comment box placeholder
@@ -528,10 +528,10 @@ gitment:
   lazy: false # Comments lazy loading with a button
   cleanly: false # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
-  github_user: # MUST HAVE, Your Github Username
+  github_user: wudaijun # MUST HAVE, Your Github Username
   github_repo: # MUST HAVE, The name of the repo you use to store Gitment comments
-  client_id: # MUST HAVE, Github client id for the Gitment
-  client_secret: # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  client_id: 34947d58cb8c943320f1 # MUST HAVE, Github client id for the Gitment
+  client_secret: 90e6791ffe0fc0c5a54479230b21a508ee4ab1b4 # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
@@ -714,7 +714,7 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
